@@ -40,15 +40,14 @@ var lengthOfLongestSubstring = function(s) {
  */
 
 var lengthOfLongestSubstring = function(s) {
-
-  let map = new Map(), max = 0, len = s.length;
-
-  for(var i = 0, j = 0; j< len; j++) {
-    if(map.has(s[j])) {
-      i = Math.max(map.get(s[j]) + 1, i)
-    }
-    max = Math.max(max, j - i + 1)
-    map.set(s[j], j)
+  let map = new Map(), max = 0, len = s.length, tempIndex = 0;
+  for(var j = 0; j < len; j++) {
+      if(map.has(s[j])) {
+          // 遇到相同的在map 中找到相同项的索引 后移一位， 更新起始位的索引
+          tempIndex = Math.max(map.get(s[j]) + 1, tempIndex)
+      }
+      max = Math.max(max, j - tempIndex + 1 )
+      map.set(s[j], j)
   }
   return max;
-}
+};
