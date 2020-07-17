@@ -12,6 +12,7 @@
     说明:所有输入只包含小写字母 a-z 。
  */
 
+ 
 var longestCommonPrefix = function(strs) {
   if(!strs.length) return ''
   let preStr = ''

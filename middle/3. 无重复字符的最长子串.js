@@ -38,7 +38,6 @@ var lengthOfLongestSubstring = function(s) {
  * 使用map 维护
  * key 为字符 ，value 为下标
  */
-
 var lengthOfLongestSubstring = function(s) {
   let map = new Map(), max = 0, len = s.length, tempIndex = 0;
   for(var j = 0; j < len; j++) {

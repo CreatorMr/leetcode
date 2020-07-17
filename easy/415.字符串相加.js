@@ -15,6 +15,7 @@ num1 和num2 都不包含任何前导零。
  * @param {string} num2
  * @return {string}
  */
+
 var addStrings = function(num1, num2) {
   let len1 = num.length, len2 = num2.length, temp = 0, result = ''
   while(len1 || len2) {

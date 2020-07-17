@@ -35,3 +35,12 @@ var merge = function(nums1, m, nums2, n) {
     num1[--len] = nums1[m-1] >= nums2[n-1] ? nums1[--m] : nums2[--n]
   }
 };
+
+
+/**
+ * 暴力
+ */
+
+var merge = function(nums1, m, nums2, n) {
+  return nums1.concat(nums2).sort((a,b)=> a-b)
+}

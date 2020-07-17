@@ -30,6 +30,8 @@
    }
  }
 
+
+
  /**
   * 3、字符串的排列
   */
@@ -46,6 +48,7 @@
     }
     return false;
   }
+
 
 /**
  * 4、字符串相乘
@@ -178,3 +181,53 @@ var threeSum = function(nums) {
   return result;
 }
 
+/**
+ * 9、岛屿的最大面积
+ */
+
+ var maxAreaOfIsland = function(grid) {
+   let maxArea = 0;
+   for(let i  = 0 ; i< grid.length, i++) {
+     for(let j = 0 ; j < grid[0].length; j++) {
+       if(grid[i][j] === 1) {
+         maxArea = Math.max(dfs(i,j), maxArea)
+       }
+     }
+   }
+
+   function dfs(i,j) {
+     if(i<0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] ==0) {
+       return 0
+     }
+     grid[i][j] = 0;
+     let count = 1;
+     count += dfs(i + 1, j)
+     count += dfs(i - 1, j)
+     count += dfs(i, j + 1)
+     count += dfs(i, j - 1)
+     return count;
+   }
+   return maxArea;
+ }
+
+ /**
+  * 10.搜索旋转排序数组
+  */
+
+  var search = function(nums, target) {
+
+  }
+
+
+  /**
+   * 最大和的连续子数组
+   */
+
+   var maxSubArray = function(nums) {
+     let max = nums[0], sum = 0;
+     nums.forEach(x => {
+       sum = Math.max(sum + x, x)
+       max = Math.max(max, sum)
+     })
+     return max;
+   }
